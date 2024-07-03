@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>CRUD - Registro de Ponto e Funcionário</title>
+  <link href="main.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <header id="header">
+    <div class="cabecalho">
+      <nav id="navbar" class="navbar">
+        <ul>
+          <a class="cabecalho_cadastro" href="index.html">Cadastro</a>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <h1>Cadastro de Funcionário</h1>
+    <form id="FuncionarioForm">
+      <label for="nomeFuncionario">Nome:</label>
+      <input type="text" id="nomeFuncionario" name="nome" required>
+      <label for="cpfFuncionario">CPF:</label>
+      <input type="text" id="cpfFuncionario" name="cpf" required>
+      <label for="emailFuncionario">Email:</label>
+      <input type="email" id="emailFuncionario" name="email" required>
+      <label for="dataAdmissaoFuncionario">Data de Admissão:</label>
+      <input type="date" id="dataAdmissaoFuncionario" name="dataAdmissao" required>
+      <button type="submit">Enviar</button>
+    </form>
+
+    <h1>Registro de Ponto</h1>
+    <form id="registroForm">
+        <label for="horaPonto">Hora do Ponto:</label>
+        <input type="datetime-local" id="horaPonto" name="horaPonto" required>
+        <label for="tipoRegistro">Tipo de Registro:</label>
+        <select id="tipoRegistro" name="tipoRegistro" required>
+            <option value="ENTRADA">Entrada</option>
+            <option value="SAIDA">Saída</option>
+        </select>
+        <button type="submit">Registrar Ponto</button>
+    </form>
+
+    <h2>Lista de Funcionários</h2>
+    <table id="tabelaFuncionarios">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Nome</th>
+          <th>CPF</th>
+          <th>Email</th>
+          <th>Data de Admissão</th>
+          <th>Ações</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+
+    <h2>Lista de Registros de Ponto</h2>
+    <table id="tabelaRegistros">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Hora do Ponto</th>
+          <th>Tipo de Registro</th>
+          <th>Ações</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+
+    <h2>Excluir Registro de Funcionário ou Ponto</h2>
+    <form id="excluirForm">
+      <label for="tipoExcluir">Tipo:</label>
+      <select id="tipoExcluir" name="tipoExcluir">
+        <option value="funcionario">Funcionário</option>
+        <option value="registro">Registro de Ponto</option>
+      </select>
+      <label for="idExcluir">ID:</label>
+      <input type="text" id="idExcluir" name="idExcluir" required>
+      <button type="submit">Excluir</button>
+    </form>
+
+    <h2>Atualizar Funcionário</h2>
+    <form id="atualizarFuncionarioForm">
+      <label for="idAtualizarFuncionario">ID:</label>
+      <input type="text" id="idAtualizarFuncionario" name="idAtualizarFuncionario" required>
+      <label for="nomeAtualizarFuncionario">Nome:</label>
+      <input type="text" id="nomeAtualizarFuncionario" name="nomeAtualizarFuncionario">
+      <label for="cpfAtualizarFuncionario">CPF:</label>
+      <input type="text" id="cpfAtualizarFuncionario" name="cpfAtualizarFuncionario">
+      <label for="emailAtualizarFuncionario">Email:</label>
+      <input type="email" id="emailAtualizarFuncionario" name="emailAtualizarFuncionario">
+      <label for="dataAdmissaoAtualizarFuncionario">Data de Admissão:</label>
+      <input type="date" id="dataAdmissaoAtualizarFuncionario" name="dataAdmissaoAtualizarFuncionario">
+      <button type="submit">Atualizar Funcionário</button>
+    </form>
+
+    <h2>Atualizar Registro de Ponto</h2>
+    <form id="atualizarRegistroForm">
+      <label for="idAtualizarRegistro">ID:</label>
+      <input type="text" id="idAtualizarRegistro" name="idAtualizarRegistro" required>
+      <label for="horaPontoAtualizar">Hora do Ponto:</label>
+      <input type="datetime-local" id="horaPontoAtualizar" name="horaPontoAtualizar">
+      <label for="tipoRegistroAtualizar">Tipo de Registro:</label>
+      <select id="tipoRegistroAtualizar" name="tipoRegistroAtualizar">
+          <option value="ENTRADA">Entrada</option>
+          <option value="SAIDA">Saída</option>
+      </select>
+      <button type="submit">Atualizar Registro</button>
+    </form>
+  </main>
+  <footer id="footer"></footer>
+</body>
+</html>
